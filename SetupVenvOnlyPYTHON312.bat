@@ -25,6 +25,7 @@ echo Shortcut.Save >> "%temp%\CreateShortcut.vbs"
 cscript //nologo "%temp%\CreateShortcut.vbs"
 :: Clean up the temporary VBScript
 del "%temp%\CreateShortcut.vbs"
+echo Hope everything went well for you. You should find your conda environment in the VENV folder of your main instance.
 ENDLOCAL
 pause
 conda deactivate
