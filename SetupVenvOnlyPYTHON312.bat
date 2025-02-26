@@ -12,14 +12,17 @@ cd comfyui
 "%USERPROFILE%\AppData\Local\Programs\Python\Python312\python.exe" -m venv venv
 call venv\scripts\activate
 :: Define the target file and shortcut location
-set targetFile=%~dp0ComfyUI\LaunchVENVed.bat
+set targetFile=%~dp0..\ComfyUI\LaunchVENVed.bat
 set shortcutLocation=%~dp0LaunchVENVed.lnk
+set iconFile=%~dp0artwork\launch.ico  
+:: Replace with the actual path to your icon file
 :: Create a VBScript to generate the shortcut
 echo Set WshShell = WScript.CreateObject("WScript.Shell") > "%temp%\CreateShortcut.vbs"
 echo Set Shortcut = WshShell.CreateShortcut("%shortcutLocation%") >> "%temp%\CreateShortcut.vbs"
 echo Shortcut.TargetPath = "%targetFile%" >> "%temp%\CreateShortcut.vbs"
 echo Shortcut.WorkingDirectory = "%~dp0ComfyUI" >> "%temp%\CreateShortcut.vbs"
 echo Shortcut.WindowStyle = 1 >> "%temp%\CreateShortcut.vbs"
+echo Shortcut.IconLocation = "%iconFile%" >> "%temp%\CreateShortcut.vbs"
 echo Shortcut.Save >> "%temp%\CreateShortcut.vbs"
 :: Run the VBScript
 cscript //nologo "%temp%\CreateShortcut.vbs"
