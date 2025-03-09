@@ -10,3 +10,6 @@ So, important paths:
 X:\YourWorkspace\Yourinstance\ComfyUI\
 X:\YourWorkspace\Yourinstance\ComfyUIVENVpreparationTool\
 This tool is part of a set of tools that are to become optional. It is separated to keep things sorted and clean.
+
+Here is a more recent tool with similar features-set but for a slightly different purpose.
+https://github.com/cheesecakejohnsonturbo/AutoVenvWithIncludedPyWebView
